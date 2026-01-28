@@ -1,0 +1,59 @@
+@model ApprentissageInformatique.Models.Module
+@{
+    ViewData["Title"] = $"Résultats - {Model.Titre}";
+    int score = (int)ViewBag.Score;
+    int total = (int)ViewBag.Total;
+    int pourcentage = total > 0 ? (score * 100) / total : 0;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/quiz.css" asp-append-version="true" />
+}
+
+<div class="container">
+    <div class="quiz-result">
+        <div class="result-header" style="border-top-color: @Model.Couleur;">
+            <span class="module-icon-large">@Model.Icone</span>
+            <h1>Résultats du Quiz</h1>
+        </div>
+
+        <div class="result-content">
+            <div class="score-display">
+                <div class="score-circle" style="border-color: @Model.Couleur;">
+                    <span class="score-number">@score/@total</span>
+                    <span class="score-percentage">@pourcentage%</span>
+                </div>
+            </div>
+
+            <div class="result-message">
+                @if (pourcentage >= 80)
+                {
+                    <h2>Excellent travail !</h2>
+                    <p>Vous maîtrisez bien ce module. Continuez comme ça !</p>
+                }
+                else if (pourcentage >= 60)
+                {
+                    <h2>Bon travail !</h2>
+                    <p>Vous avez de bonnes bases. N'hésitez pas à réviser le contenu.</p>
+                }
+                else
+                {
+                    <h2>Continuez à apprendre</h2>
+                    <p>Relisez le contenu du module et réessayez le quiz.</p>
+                }
+            </div>
+
+            <div class="result-actions">
+                <a href="@Model.PdfPath" target="_blank" class="btn btn-primary">
+                    Revoir le module
+                </a>
+                <a asp-action="Quiz" asp-route-id="@Model.Id" class="btn btn-secondary">
+                    Réessayer le quiz
+                </a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

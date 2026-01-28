@@ -1,0 +1,51 @@
+@model ApprentissageInformatique.Models.Module
+@{
+    ViewData["Title"] = $"Quiz - {Model.Titre}";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/quiz.css" asp-append-version="true" />
+}
+
+<div class="container">
+    <div class="quiz-container">
+        <div class="quiz-header" style="border-top-color: @Model.Couleur;">
+            <div class="quiz-header-content">
+                <span class="module-icon-large">@Model.Icone</span>
+                <div>
+                    <h1>@Model.Titre</h1>
+                    <p>Répondez aux questions suivantes</p>
+                </div>
+            </div>
+        </div>
+
+        <form asp-action="SubmitQuiz" asp-route-moduleId="@Model.Id" method="post" class="quiz-form">
+            @for (int i = 0; i < Model.Questions.Count; i++)
+            {
+                var question = Model.Questions[i];
+                <div class="question-card">
+                    <div class="question-number">Question @(i + 1)</div>
+                    <h3>@question.Texte</h3>
+                    <div class="options">
+                        @for (int j = 0; j < question.Options.Count; j++)
+                        {
+                            <label class="option-label">
+                                <input type="radio" name="reponses[@question.Id]" value="@j" required>
+                                <span class="option-text">@question.Options[j]</span>
+                            </label>
+                        }
+                    </div>
+                </div>
+            }
+
+            <div class="quiz-submit">
+                <button type="submit" class="btn btn-primary">
+                    Soumettre mes réponses
+                </button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+                    Annuler
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
