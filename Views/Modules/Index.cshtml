@@ -1,17 +1,23 @@
 @model List<ApprentissageInformatique.Models.Module>
 @{
-    ViewData["Title"] = "Modules";
+    ViewData["Title"] = "Accueil";
 }
 
 @section Styles {
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/modules.css" asp-append-version="true" />
 }
 
-<div class="modules-page-header">
-    <div class="container">
-        <h1>Tous les Modules</h1>
-        <p class="lead">Explorez tous les modules d'apprentissage disponibles</p>
+<div class="stars-background"></div>
+
+<div class="hero">
+    <div class="hero-banner">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+        <div class="container">
+            <h1>Parcours d'initiation à l'informatique au CENTRE ALPHA</h1>
+            <p class="lead">Découvrez des modules pour apprendre les bases de l'informatique</p>
+        </div>
     </div>
 </div>
 
@@ -20,14 +26,16 @@
         @foreach (var module in Model)
         {
             <div class="module-card" style="border-top-color: @module.Couleur;">
-                <div class="module-icon">@module.Icone</div>
+                <div class="module-icon">
+                    <img src="@Url.Content("~/images/ux.png")" alt="@module.Titre" />
+                </div>
                 <h2>@module.Titre</h2>
                 <p>@module.Description</p>
                 <div class="module-actions">
                     <a href="@module.PdfPath" target="_blank" class="btn btn-primary">
                         Voir le PDF
                     </a>
-                    <a asp-action="Quiz" asp-route-id="@module.Id" class="btn btn-secondary">
+                    <a asp-controller="Modules" asp-action="Quiz" asp-route-id="@module.Id" class="btn btn-secondary">
                         Quiz
                     </a>
                 </div>

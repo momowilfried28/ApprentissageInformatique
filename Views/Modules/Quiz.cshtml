@@ -11,7 +11,16 @@
     <div class="quiz-container">
         <div class="quiz-header" style="border-top-color: @Model.Couleur;">
             <div class="quiz-header-content">
-                <span class="module-icon-large">@Model.Icone</span>
+                <span class="module-icon-large">
+                    @if (Model.Image.StartsWith("~/images/"))
+                    {
+                        <img src="@Url.Content(Model.Image)" alt="@Model.Titre" />
+                    }
+                    else
+                    {
+                        @Model.Image
+                    }
+                </span>
                 <div>
                     <h1>@Model.Titre</h1>
                     <p>Répondez aux questions suivantes</p>
