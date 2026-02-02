@@ -1,24 +1,26 @@
 /* About Page */
+
 .about-page-header {
-    background: var(--card-background);
+    /* background: transparent;*/
+    background-color: var(--card-background) transparent;
     padding: 60px 0;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
 }
 
-.about-page-header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-}
+    .about-page-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        animation: fadeInUp 0.8s ease-out;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
 
-.about-page-header .lead {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    margin: 0;
-}
+    .about-page-header .lead {
+        font-size: 1.5rem;
+        color: var(--text-secondary);
+        margin: 0;
+    }
 
 .about-content {
     max-width: 900px;
@@ -34,23 +36,23 @@
     box-shadow: var(--shadow-sm);
 }
 
-.about-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 20px 0;
-}
+    .about-section h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0 0 20px 0;
+    }
 
-.about-section p {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin: 0 0 16px 0;
-}
+    .about-section p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+        margin: 0 0 16px 0;
+    }
 
-.about-section p:last-child {
-    margin-bottom: 0;
-}
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
 
 .about-list {
     list-style: none;
@@ -58,27 +60,27 @@
     margin: 20px 0;
 }
 
-.about-list li {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    padding: 12px 0;
-    padding-left: 32px;
-    position: relative;
-}
+    .about-list li {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+        padding: 12px 0;
+        padding-left: 32px;
+        position: relative;
+    }
 
-.about-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.25rem;
-}
+        .about-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
 
-.about-list li strong {
-    color: var(--text-primary);
-}
+        .about-list li strong {
+            color: var(--text-primary);
+        }
 
 /* Responsive pour About */
 @media (max-width: 768px) {
@@ -86,25 +88,25 @@
         padding: 40px 0;
         margin-bottom: 40px;
     }
-    
-    .about-page-header h1 {
-        font-size: 2rem;
-    }
-    
-    .about-page-header .lead {
-        font-size: 1.25rem;
-    }
-    
+
+        .about-page-header h1 {
+            font-size: 2rem;
+        }
+
+        .about-page-header .lead {
+            font-size: 1.25rem;
+        }
+
     .about-section {
         padding: 24px;
     }
-    
-    .about-section h2 {
-        font-size: 1.5rem;
-    }
-    
-    .about-section p,
-    .about-list li {
-        font-size: 1rem;
-    }
+
+        .about-section h2 {
+            font-size: 1.5rem;
+        }
+
+        .about-section p,
+        .about-list li {
+            font-size: 1rem;
+        }
 }
