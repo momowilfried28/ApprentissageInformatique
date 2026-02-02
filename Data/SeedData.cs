@@ -13,7 +13,7 @@ public static class SeedData
                 Id = 1,
                 Titre = "Initiation à l'ordinateur",
                 Description = "Découvrir les éléments essentiels d'un ordinateur",
-                Icone = "💻",
+                Image= "~/images/ordinateur.gif",
                 Couleur = "#4A90E2",
                 PdfPath = "/pdfs/module1/MODULE 1_INITIATION A L'ORDINATEU1R.pdf",
                 Questions = GetQuestionsOrdinateur()
@@ -23,7 +23,7 @@ public static class SeedData
                 Id = 2,
                 Titre = "Navigation sur Internet",
                 Description = "Apprendre à naviguer sur le web",
-                Icone = "🌐",
+                Image = "~/images/site-web.gif",
                 Couleur = "#50C878",
                 PdfPath = "/pdfs/module2/MODULE 2_NAVIGATION SUR INTERNET2.pdf",
                 Questions = GetQuestionsInternet()
@@ -33,7 +33,7 @@ public static class SeedData
                 Id = 3,
                 Titre = "Messagerie et communication en ligne",
                 Description = "Envoyer et recevoir des courriels",
-                Icone = "📧",
+                Image = "~/images/chat.gif",
                 Couleur = "#FF6B6B",
                 PdfPath = "/pdfs/module3/module3.pdf",
                 Questions = GetQuestionsMessagerie()
@@ -43,7 +43,7 @@ public static class SeedData
                 Id = 4,
                 Titre = "Nettoyage et protection du PC",
                 Description = "Protéger son ordinateur contre les virus",
-                Icone = "🛡️",
+                Image = "~/images/bouclier.gif",
                 Couleur = "#FFA500",
                 PdfPath = "/pdfs/module4/module4.pdf",
                 Questions = GetQuestionsProtection()

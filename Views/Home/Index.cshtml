@@ -26,7 +26,12 @@
         @foreach (var module in Model)
         {
             <div class="module-card" style="border-top-color: @module.Couleur;">
-                <div class="module-icon">@module.Icone</div>
+                <div class="module-icon">
+                    @if (module.Image.StartsWith("~/images/"))
+                    {
+                        <img src="@Url.Content(module.Image)" alt="@module.Titre" />
+                    }
+                </div>
                 <h2>@module.Titre</h2>
                 <p>@module.Description</p>
                 <div class="module-actions">
