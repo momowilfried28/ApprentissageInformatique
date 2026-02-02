@@ -15,7 +15,7 @@ public static class SeedData
                 Description = "Découvrir les éléments essentiels d'un ordinateur",
                 Image= "~/images/ordinateur.gif",
                 Couleur = "#4A90E2",
-                PdfPath = "/pdfs/module1/MODULE 1_INITIATION A L'ORDINATEU1R.pdf",
+                PdfPath = "/pdfs/MODULE 1_INITIATION A L'ORDINATEU1R.pdf",
                 Questions = GetQuestionsOrdinateur()
             },
             new Module
@@ -25,7 +25,7 @@ public static class SeedData
                 Description = "Apprendre à naviguer sur le web",
                 Image = "~/images/site-web.gif",
                 Couleur = "#50C878",
-                PdfPath = "/pdfs/module2/MODULE 2_NAVIGATION SUR INTERNET2.pdf",
+                PdfPath = "/pdfs/MODULE 2_NAVIGATION SUR INTERNET2 (1).pdf",
                 Questions = GetQuestionsInternet()
             },
             new Module
