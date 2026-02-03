@@ -1,58 +1,113 @@
 @model ApprentissageInformatique.Models.Module
 @{
+    var reponses = ViewBag.ReponsesUser as Dictionary<int, int>;
     ViewData["Title"] = $"Résultats - {Model.Titre}";
     int score = (int)ViewBag.Score;
     int total = (int)ViewBag.Total;
     int pourcentage = total > 0 ? (score * 100) / total : 0;
+
+    string couleurResultat = pourcentage >= 80 ? "#22c55e" : pourcentage >= 60 ? "#f59e0b" : "#ef4444";
+    string messageTitle = pourcentage >= 80 ? "Excellent travail !" : pourcentage >= 60 ? "Bon travail !" : "Continuez à apprendre";
+    string messageText = pourcentage >= 80 ? "Vous maîtrisez bien ce module. Continuez comme ça !"
+                       : pourcentage >= 60 ? "Vous avez de bonnes bases. N'hésitez pas à réviser le contenu."
+                       : "Relisez le contenu du module et réessayez le quiz.";
 }
 
 @section Styles {
     <link rel="stylesheet" href="~/css/quiz.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/QuizResult.css" asp-append-version="true" />
+
+    
 }
 
-<div class="container">
-    <div class="quiz-result">
-        <div class="result-header" style="border-top-color: @Model.Couleur;">
+<div class="quiz-result-container result-@(pourcentage >= 80 ? "excellent" : pourcentage >= 60 ? "good" : "fail")">
+    <div class="result-card">
+        <div class="result-header">
             <h1>Résultats du Quiz</h1>
+            <p class="module-title">@Model.Titre</p>
         </div>
 
-        <div class="result-content">
-            <div class="score-display">
-                <div class="score-circle" style="border-color: @Model.Couleur;">
-                    <span class="score-number">@score/@total</span>
-                    <span class="score-percentage">@pourcentage%</span>
-                </div>
+        <div class="score-section">
+            <div class="score-circle" style="border-color: @couleurResultat;">
+                <span class="score-number">@score/@total</span>
+                <span class="score-percentage">@pourcentage%</span>
+            </div>
+            <div class="result-message" style="--result-color: @couleurResultat;">
+                <h2>@messageTitle</h2>
+                <p>@messageText</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="@Model.PdfPath" target="_blank" class="btn btn-primary">
+                Revoir le module
+            </a>
+            <a asp-action="Quiz" asp-route-id="@Model.Id" class="btn btn-secondary">
+                Réessayer le quiz
+            </a>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline">
+                 Retour à l'accueil
+            </a>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="answers-section">
+            <div class="answers-header" style="border-bottom-color: @Model.Couleur;">
+                <h2>📋 Détail de vos réponses</h2>
             </div>
 
-            <div class="result-message">
-                @if (pourcentage >= 80)
+            @if (Model.Questions != null && Model.Questions.Any())
+            {
+                int questionNumber = 1;
+                foreach (var question in Model.Questions)
                 {
-                    <h2>Excellent travail !</h2>
-                    <p>Vous maîtrisez bien ce module. Continuez comme ça !</p>
-                }
-                else if (pourcentage >= 60)
-                {
-                    <h2>Bon travail !</h2>
-                    <p>Vous avez de bonnes bases. N'hésitez pas à réviser le contenu.</p>
-                }
-                else
-                {
-                    <h2>Continuez à apprendre</h2>
-                    <p>Relisez le contenu du module et réessayez le quiz.</p>
-                }
-            </div>
+                    var userAnswer = reponses.ContainsKey(question.Id) ? reponses[question.Id] : -1;
+                    var correctAnswer = question.ReponseCorrecte;
+                    var isCorrect = userAnswer == correctAnswer;
 
-            <div class="result-actions">
-                <a href="@Model.PdfPath" target="_blank" class="btn btn-primary">
-                    Revoir le module
-                </a>
-                <a asp-action="Quiz" asp-route-id="@Model.Id" class="btn btn-secondary">
-                    Réessayer le quiz
-                </a>
-                <a asp-controller="Home" asp-action="Index" class="btn btn-outline">
-                    Retour à l'accueil
-                </a>
-            </div>
+                    <div class="answer-item @(isCorrect ? "correct" : "incorrect")">
+                        <h4 class="question-text">
+                            Question @questionNumber : @question.Texte
+                        </h4>
+
+                        <div>
+                            <span class="answer-label">Votre réponse :</span>
+                            @if (isCorrect)
+                            {
+                                <span class="answer-text correct">
+                                    @question.Options[userAnswer]
+                                    <span class="icon">✅</span>
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="answer-text incorrect">
+                                    @(userAnswer >= 0 ? question.Options[userAnswer] : "Aucune réponse")
+                                    <span class="icon">❌</span>
+                                </span>
+                            }
+                        </div>
+
+                        @if (!isCorrect)
+                        {
+                            <div class="correct-answer-box">
+                                <span class="answer-label">✓ Bonne réponse :</span>
+                                <span class="answer-text correct">
+                                    @question.Options[correctAnswer]
+                                </span>
+                            </div>
+                        }
+                    </div>
+                    questionNumber++;
+                }
+            }
+            else
+            {
+                <p style="text-align: center; color: #6b7280; padding: 2rem;">
+                    Aucune question disponible pour ce quiz.
+                </p>
+            }
         </div>
     </div>
 </div>
