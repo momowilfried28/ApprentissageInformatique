@@ -141,10 +141,137 @@ public static class SeedData
     private static List<Question> GetQuestionsInternet()
     {
         return new List<Question>
-        {
-            new Question { Id = 3, ModuleId = 2, Texte = "Que signifie URL?", Options = new List<string> { "Uniform Resource Locator", "Universal Resource Link", "Unified Resource Locator", "Unique Resource Locator" }, ReponseCorrecte = 0 },
-            new Question { Id = 4, ModuleId = 2, Texte = "Qu'est-ce qu'un navigateur web?", Options = new List<string> { "Un moteur de recherche", "Un logiciel pour surfer sur Internet", "Un site web", "Un protocole" }, ReponseCorrecte = 1 }
-        };
+    {
+        new Question {
+            Id = 1,
+            ModuleId = 2,
+            Texte = "À quoi sert un navigateur Internet?",
+            Options = new List<string> {
+                "À écrire des documents",
+                "À aller sur Internet",
+                "À installer des logiciels",
+                "À envoyer des textos"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 2,
+            ModuleId = 2,
+            Texte = "Quel exemple est un navigateur?",
+            Options = new List<string> {
+                "Microsoft Word",
+                "Google Chrome",
+                "Adobe Reader",
+                "Skype"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 3,
+            ModuleId = 2,
+            Texte = "Que doit-on écrire dans la barre de recherche?",
+            Options = new List<string> {
+                "Des mots-clés",
+                "Des phrases complètes obligatoires",
+                "Seulement des chiffres",
+                "Le nom de son ordinateur"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new Question {
+            Id = 4,
+            ModuleId = 2,
+            Texte = "Quel signe indique qu’un site est sécurisé?",
+            Options = new List<string> {
+                "http://",
+                "Un cadenas et https://",
+                "Beaucoup de publicités",
+                "Des couleurs vives"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 5,
+            ModuleId = 2,
+            Texte = "Quel est un signe d’un site douteux?",
+            Options = new List<string> {
+                "Adresse commençant par https://",
+                "Site gouvernemental",
+                "Promesses trop belles pour être vraies",
+                "Présence d’un cadenas"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new Question {
+            Id = 6,
+            ModuleId = 2,
+            Texte = "À quoi sert le bouton 'Retour' dans un navigateur?",
+            Options = new List<string> {
+                "Fermer l’ordinateur",
+                "Revenir à la page précédente",
+                "Ouvrir un nouvel onglet",
+                "Actualiser la page"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 7,
+            ModuleId = 2,
+            Texte = "Que permet un onglet?",
+            Options = new List<string> {
+                "Changer la langue du site",
+                "Ouvrir plusieurs pages en même temps",
+                "Télécharger des fichiers automatiquement",
+                "Supprimer l’historique"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 8,
+            ModuleId = 2,
+            Texte = "Quel site est un exemple de source fiable?",
+            Options = new List<string> {
+                "canada-gouv-info.net",
+                "google-support-help-123.xyz",
+                "quebec.ca",
+                "gagne-un-iphone-maintenant.com"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new Question {
+            Id = 9,
+            ModuleId = 2,
+            Texte = "Quel type de recherche peut-on faire sur Internet?",
+            Options = new List<string> {
+                "Météo",
+                "Recettes",
+                "Actualités",
+                "Toutes ces réponses"
+            },
+            ReponseCorrecte = 3
+        },
+
+        new Question {
+            Id = 10,
+            ModuleId = 2,
+            Texte = "Pourquoi comparer plusieurs sources?",
+            Options = new List<string> {
+                "Pour vérifier si l’information est fiable",
+                "Pour perdre du temps",
+                "Parce qu’un seul site suffit toujours",
+                "Pour éviter d’utiliser Google"
+            },
+            ReponseCorrecte = 0
+        }
+    };
     }
 
     private static List<Question> GetQuestionsMessagerie()
