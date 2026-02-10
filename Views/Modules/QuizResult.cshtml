@@ -13,12 +13,6 @@
                        : "Relisez le contenu du module et réessayez le quiz.";
 }
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/quiz.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/QuizResult.css" asp-append-version="true" />
-
-    
-}
 
 <div class="quiz-result-container result-@(pourcentage >= 80 ? "excellent" : pourcentage >= 60 ? "good" : "fail")">
     <div class="result-card">
@@ -54,7 +48,7 @@
     <div class="result-card">
         <div class="answers-section">
             <div class="answers-header" style="border-bottom-color: @Model.Couleur;">
-                <h2>📋 Détail de vos réponses</h2>
+                <h2> Détail de vos réponses</h2>
             </div>
 
             @if (Model.Questions != null && Model.Questions.Any())
@@ -111,3 +105,7 @@
         </div>
     </div>
 </div>
+@section Styles {
+    <link rel="stylesheet" href="~/css/quiz.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/QuizResult.css" asp-append-version="true" />
+}

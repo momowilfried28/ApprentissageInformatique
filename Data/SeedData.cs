@@ -7,6 +7,7 @@ public static class SeedData
     public static List<Module> GetModules()
     {
         return new List<Module>
+
         {
             new Module
             {
@@ -35,7 +36,7 @@ public static class SeedData
                 Description = "Envoyer et recevoir des courriels",
                 Image = "~/images/chat.gif",
                 Couleur = "#FF6B6B",
-                PdfPath = "/pdfs/module3/module3.pdf",
+                PdfPath = "/pdfs/MODULE 3_Communication et Messagerie.pdf",
                 Questions = GetQuestionsMessagerie()
             },
             new Module
@@ -45,7 +46,7 @@ public static class SeedData
                 Description = "Protéger son ordinateur contre les virus",
                 Image = "~/images/bouclier.gif",
                 Couleur = "#FFA500",
-                PdfPath = "/pdfs/module4/module4.pdf",
+                PdfPath = "/pdfs/MODULE 4  NETTOYAGE ET PROTECTION DU PC.pdf",
                 Questions = GetQuestionsProtection()
             }
         };
@@ -277,10 +278,137 @@ public static class SeedData
     private static List<Question> GetQuestionsMessagerie()
     {
         return new List<Question>
-        {
-            new Question { Id = 5, ModuleId = 3, Texte = "Que signifie @ dans une adresse email?", Options = new List<string> { "À", "Chez", "Arobase", "Tous les réponses" }, ReponseCorrecte = 3 },
-            new Question { Id = 6, ModuleId = 3, Texte = "Qu'est-ce qu'un spam?", Options = new List<string> { "Un email important", "Un courrier indésirable", "Un virus", "Un logiciel" }, ReponseCorrecte = 1 }
-        };
+    {
+        new Question {
+            Id = 1,
+            ModuleId = 3,
+            Texte = "À quoi sert une adresse courriel ?",
+            Options = new List<string> {
+                "À envoyer et recevoir des messages",
+                "À regarder des vidéos",
+                "À jouer à des jeux",
+                "À installer des applications"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new Question {
+            Id = 2,
+            ModuleId = 3,
+            Texte = "Quel site permet d’accéder à Gmail ?",
+            Options = new List<string> {
+                "google.ca",
+                "gmail.com",
+                "hotmail.fr",
+                "facebook.com"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 3,
+            ModuleId = 3,
+            Texte = "Que signifie le champ « À : » dans un courriel ?",
+            Options = new List<string> {
+                "Le sujet du message",
+                "L’adresse du destinataire",
+                "La pièce jointe",
+                "La signature"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 4,
+            ModuleId = 3,
+            Texte = "À quoi sert le champ « Objet » ?",
+            Options = new List<string> {
+                "À écrire le message",
+                "À ajouter une photo",
+                "À indiquer le sujet du courriel",
+                "À envoyer le message"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new Question {
+            Id = 5,
+            ModuleId = 3,
+            Texte = "Comment appelle-t-on un message frauduleux qui tente de voler des informations ?",
+            Options = new List<string> {
+                "Un message important",
+                "Un spam",
+                "Un phishing",
+                "Un brouillon"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new Question {
+            Id = 6,
+            ModuleId = 3,
+            Texte = "À quoi sert le bouton « Nouveau message » dans Gmail ?",
+            Options = new List<string> {
+                "À supprimer un message",
+                "À écrire un nouveau courriel",
+                "À se déconnecter",
+                "À ajouter un contact"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new Question {
+            Id = 7,
+            ModuleId = 3,
+            Texte = "Que signifie « Ajouter une pièce jointe » ?",
+            Options = new List<string> {
+                "Ajouter une photo ou un document",
+                "Ajouter un contact",
+                "Ajouter un nouveau compte",
+                "Ajouter un mot de passe"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new Question {
+            Id = 8,
+            ModuleId = 3,
+            Texte = "Que fait le bouton « Envoyer » ?",
+            Options = new List<string> {
+                "Il enregistre le message",
+                "Il supprime le message",
+                "Il envoie le courriel au destinataire",
+                "Il ferme Gmail"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new Question {
+            Id = 9,
+            ModuleId = 3,
+            Texte = "Que doit-on faire si un message semble suspect ?",
+            Options = new List<string> {
+                "Cliquer sur tous les liens",
+                "Répondre rapidement",
+                "Le supprimer ou l’ignorer",
+                "Envoyer ses informations personnelles"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new Question {
+            Id = 10,
+            ModuleId = 3,
+            Texte = "Pourquoi est-il important de se déconnecter après usage ?",
+            Options = new List<string> {
+                "Pour économiser de la batterie",
+                "Pour éviter que d’autres accèdent à votre courriel",
+                "Pour supprimer les messages",
+                "Pour accélérer Internet"
+            },
+            ReponseCorrecte = 1
+        }
+    };
     }
 
     private static List<Question> GetQuestionsProtection()
