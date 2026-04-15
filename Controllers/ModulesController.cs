@@ -16,7 +16,7 @@ public class ModulesController : Controller
     {
         var modules = SeedData.GetModules();
         var module = modules.FirstOrDefault(m => m.Id == id);
-        
+
         if (module == null)
         {
             return NotFound();
@@ -30,7 +30,7 @@ public class ModulesController : Controller
     {
         var modules = SeedData.GetModules();
         var module = modules.FirstOrDefault(m => m.Id == moduleId);
-        
+
         if (module == null)
         {
             return NotFound();
@@ -50,6 +50,7 @@ public class ModulesController : Controller
         ViewBag.Score = score;
         ViewBag.Total = total;
         ViewBag.ModuleId = moduleId;
+        ViewBag.ReponsesUser = reponses;
 
         return View("QuizResult", module);
     }
