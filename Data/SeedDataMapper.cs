@@ -26,7 +26,7 @@ public static class SeedDataMapper
             Id = seed.Id,
             ModuleId = seed.ModuleId,
             Texte = seed.Texte,
-            Options = new List<string>(seed.Options),
+            Options = [.. seed.Options],
             ReponseCorrecte = seed.ReponseCorrecte
         };
     }

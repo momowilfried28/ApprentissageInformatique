@@ -27,7 +27,10 @@ public static class SeedData
             1 => QuestionsSeedData.GetQuestionsOrdinateur(),
             2 => QuestionsSeedData.GetQuestionsInternet(),
             3 => QuestionsSeedData.GetQuestionsMessagerie(),
-            4 => QuestionsSeedData.GetQuestionsProtection(),
+            4 => QuestionsSeedData.GetQuestionsNettoyageProtection(),
+            5 => QuestionsSeedData.GetQuestionsDepannage(),
+            6 => QuestionsSeedData.GetQuestionsCybersécurité(),
+
             _ => new List<QuestionSeed>()
         };
     }

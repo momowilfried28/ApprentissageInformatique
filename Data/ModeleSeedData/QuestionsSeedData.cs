@@ -55,12 +55,292 @@ public static class QuestionsSeedData
         };
     }
 
-    public static List<QuestionSeed> GetQuestionsProtection()
+    public static List<QuestionSeed> GetQuestionsNettoyageProtection()
     {
         return new List<QuestionSeed>
         {
-            new QuestionSeed { Id = 7, ModuleId = 4, Texte = "Qu'est-ce qu'un antivirus?", Options = new List<string> { "Un virus", "Un logiciel de protection", "Un navigateur", "Un système d'exploitation" }, ReponseCorrecte = 1 },
-            new QuestionSeed { Id = 8, ModuleId = 4, Texte = "Pourquoi faut-il mettre à jour son système?", Options = new List<string> { "Pour avoir de nouvelles fonctionnalités", "Pour corriger des failles de sécurité", "Pour changer de système", "Toutes les réponses" }, ReponseCorrecte = 1 }
+            new QuestionSeed { Id = 1, ModuleId = 4, Texte = "Qu'est-ce qu'un virus informatique ?", Options = new List<string> { "Un programme qui ralentit ou endommage l'ordinateur", "Un outil pour nettoyer Windows", "Une mise à jour de sécurité", "Un fichier pour accélérer le PC" }, ReponseCorrecte = 0 },
+            new QuestionSeed { Id = 2, ModuleId = 4, Texte = "Quel antivirus est déjà installé gratuitement sur Windows ?", Options = new List<string> { "Norton", "Avast", "Windows Defender", "McAfee" }, ReponseCorrecte = 2 },
+            new QuestionSeed { Id = 3, ModuleId = 4, Texte = "À quoi sert une analyse rapide dans Windows Defender ?", Options = new List<string> { "À vérifier rapidement si des menaces sont présentes", "À supprimer les fichiers personnels", "À nettoyer la corbeille", "À mettre à jour Windows" }, ReponseCorrecte = 0 },
+            new QuestionSeed { Id = 4, ModuleId = 4, Texte = "Comment vider la corbeille ?", Options = new List<string> { "Double-cliquer sur la corbeille", "Cliquer droit puis choisir 'Vider la corbeille'", "Ouvrir Windows Update", "Redémarrer l'ordinateur" }, ReponseCorrecte = 1 },
+            new QuestionSeed { Id = 5, ModuleId = 4, Texte = "À quoi sert l'Assistant de stockage ?", Options = new List<string> { "À libérer automatiquement de l'espace", "À protéger contre les virus", "À installer des logiciels", "À changer le fond d'écran" }, ReponseCorrecte = 0 },
+            new QuestionSeed { Id = 6, ModuleId = 4, Texte = "Pourquoi faut-il mettre Windows à jour ?", Options = new List<string> { "Pour rendre l'ordinateur plus sécurisé et plus stable", "Pour supprimer les fichiers inutiles", "Pour installer des jeux", "Pour changer la couleur du bureau" }, ReponseCorrecte = 0 },
+            new QuestionSeed { Id = 7, ModuleId = 4, Texte = "Quel est l'endroit le plus sûr pour télécharger un logiciel ?", Options = new List<string> { "Une publicité 'Télécharger maintenant !'", "Un site inconnu", "Le site officiel du logiciel", "Un lien envoyé par un inconnu" }, ReponseCorrecte = 2 },
+            new QuestionSeed { Id = 8, ModuleId = 4, Texte = "Quel magasin intégré à Windows permet d'installer des logiciels en toute sécurité ?", Options = new List<string> { "Google Play", "Microsoft Store", "App Store", "Soft-download-free.xyz" }, ReponseCorrecte = 1 },
+            new QuestionSeed { Id = 9, ModuleId = 4, Texte = "Quel signe peut indiquer qu'un PC est infecté ?", Options = new List<string> { "L'ordinateur est plus rapide que d'habitude", "Aucune publicité n'apparaît", "Des ralentissements ou des fenêtres étranges", "Le PC démarre plus vite" }, ReponseCorrecte = 2 },
+            new QuestionSeed { Id = 10, ModuleId = 4, Texte = "Que faut-il éviter absolument pour rester en sécurité ?", Options = new List<string> { "Télécharger depuis le site officiel", "Installer depuis le Microsoft Store", "Cliquer sur des publicités 'Votre PC est infecté !'", "Mettre Windows à jour" }, ReponseCorrecte = 2 }
         };
+    }
+
+    public static List<QuestionSeed> GetQuestionsDepannage()
+    {
+        return new List<QuestionSeed>
+    {
+        new QuestionSeed {
+            Id = 1,
+            ModuleId = 5,
+            Texte = "Quel est le premier réflexe quand quelque chose ne fonctionne pas ?",
+            Options = new List<string> {
+                "Changer d’ordinateur",
+                "Redémarrer l’ordinateur",
+                "Supprimer un programme",
+                "Appeler un technicien"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new QuestionSeed {
+            Id = 2,
+            ModuleId = 5,
+            Texte = "Que signifie l’icône Wi-Fi avec une petite planète ?",
+            Options = new List<string> {
+                "Internet fonctionne",
+                "Le son est coupé",
+                "Pas d’Internet",
+                "Le PC est en veille"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new QuestionSeed {
+            Id = 3,
+            ModuleId = 5,
+            Texte = "Que faire si un programme ne s’ouvre pas ?",
+            Options = new List<string> {
+                "Fermer puis rouvrir le programme",
+                "Supprimer Windows",
+                "Changer le clavier",
+                "Éteindre l’écran"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 4,
+            ModuleId = 5,
+            Texte = "Comment vérifier un problème de son ?",
+            Options = new List<string> {
+                "Regarder si le son est coupé",
+                "Changer de souris",
+                "Ouvrir la calculatrice",
+                "Supprimer un fichier"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 5,
+            ModuleId = 5,
+            Texte = "Que faire si tu as oublié ton mot de passe ?",
+            Options = new List<string> {
+                "Cliquer sur « Mot de passe oublié ? »",
+                "Redémarrer l’ordinateur",
+                "Créer un nouveau compte",
+                "Appuyer sur Échap"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 6,
+            ModuleId = 5,
+            Texte = "Pourquoi un redémarrage aide souvent ?",
+            Options = new List<string> {
+                "Cela supprime Internet",
+                "Cela ferme les programmes bloqués",
+                "Cela efface les fichiers",
+                "Cela change le mot de passe"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new QuestionSeed {
+            Id = 7,
+            ModuleId = 5,
+            Texte = "Que faire si le Wi-Fi ne fonctionne plus ?",
+            Options = new List<string> {
+                "Vérifier si le routeur est allumé",
+                "Changer de clavier",
+                "Supprimer le navigateur",
+                "Éteindre l’écran"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 8,
+            ModuleId = 5,
+            Texte = "Comment tester rapidement si Internet fonctionne ?",
+            Options = new List<string> {
+                "Ouvrir Google et écrire « météo »",
+                "Ouvrir la calculatrice",
+                "Changer la langue du clavier",
+                "Fermer toutes les fenêtres"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 9,
+            ModuleId = 5,
+            Texte = "Que vérifier si un mot de passe ne fonctionne pas ?",
+            Options = new List<string> {
+                "Si la touche Maj (majuscules) est activée",
+                "Si la souris est branchée",
+                "Si l’écran est propre",
+                "Si la batterie est pleine"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 10,
+            ModuleId = 5,
+            Texte = "Que faire si un programme reste bloqué ?",
+            Options = new List<string> {
+                "Le fermer puis le rouvrir",
+                "Changer de fond d’écran",
+                "Supprimer le Wi-Fi",
+                "Éteindre l’écran"
+            },
+            ReponseCorrecte = 0
+        }
+    };
+    }
+
+    public static List<QuestionSeed> GetQuestionsCybersécurité()
+    {
+        return new List<QuestionSeed>
+    {
+        new QuestionSeed {
+            Id = 1,
+            ModuleId = 6,
+            Texte = "Comment reconnaître un site sécurisé ?",
+            Options = new List<string> {
+                "Il commence par https:// et un cadenas apparaît",
+                "Il a beaucoup de couleurs",
+                "Il affiche des publicités",
+                "Il demande toujours votre mot de passe"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 2,
+            ModuleId = 6,
+            Texte = "Quel est un exemple de transaction en ligne ?",
+            Options = new List<string> {
+                "Changer le fond d’écran",
+                "Acheter un produit ou remplir un formulaire",
+                "Éteindre l’ordinateur",
+                "Installer une imprimante"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new QuestionSeed {
+            Id = 3,
+            ModuleId = 6,
+            Texte = "Quel signe peut indiquer un courriel frauduleux ?",
+            Options = new List<string> {
+                "Une demande urgente",
+                "Un message de votre ami",
+                "Un courriel sans fautes",
+                "Une facture que vous attendiez"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 4,
+            ModuleId = 6,
+            Texte = "Quel élément NE doit jamais être partagé ?",
+            Options = new List<string> {
+                "Votre numéro d’assurance sociale (NAS)",
+                "Votre prénom",
+                "Votre ville",
+                "Votre couleur préférée"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 5,
+            ModuleId = 6,
+            Texte = "Qu’est‑ce qu’un mot de passe fort ?",
+            Options = new List<string> {
+                "Un mot simple comme 'bonjour'",
+                "Un mot de passe avec 12 caractères, majuscules, chiffres et symboles",
+                "Votre date de naissance",
+                "Votre prénom"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new QuestionSeed {
+            Id = 6,
+            ModuleId = 6,
+            Texte = "À quoi sert la vérification en deux étapes (2FA) ?",
+            Options = new List<string> {
+                "À changer la couleur du site",
+                "À recevoir un code pour confirmer votre identité",
+                "À accélérer Internet",
+                "À supprimer les virus"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new QuestionSeed {
+            Id = 7,
+            ModuleId = 6,
+            Texte = "Quel est un signe d’un faux site ?",
+            Options = new List<string> {
+                "Le prix est trop beau pour être vrai",
+                "Le site est connu",
+                "Le site commence par https://",
+                "Le site a un cadenas"
+            },
+            ReponseCorrecte = 0
+        },
+
+        new QuestionSeed {
+            Id = 8,
+            ModuleId = 6,
+            Texte = "Quel mode de paiement est sécurisé ?",
+            Options = new List<string> {
+                "Envoyer une photo de sa carte",
+                "Payer via PayPal ou carte de crédit",
+                "Donner son code par SMS",
+                "Payer en cliquant sur un lien suspect"
+            },
+            ReponseCorrecte = 1
+        },
+
+        new QuestionSeed {
+            Id = 9,
+            ModuleId = 6,
+            Texte = "Que faire si un message semble bizarre ?",
+            Options = new List<string> {
+                "Cliquer sur le lien pour vérifier",
+                "Répondre rapidement",
+                "Ne pas cliquer et supprimer le message",
+                "Envoyer ses informations"
+            },
+            ReponseCorrecte = 2
+        },
+
+        new QuestionSeed {
+            Id = 10,
+            ModuleId = 6,
+            Texte = "Quel est un bon réflexe de sécurité ?",
+            Options = new List<string> {
+                "Mettre à jour l’ordinateur",
+                "Utiliser le même mot de passe partout",
+                "Cliquer sur toutes les offres",
+                "Partager ses codes par SMS"
+            },
+            ReponseCorrecte = 0
+        }
+    };
     }
 }

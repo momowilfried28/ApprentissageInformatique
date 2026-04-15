@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+<OutputType>WinExe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,11 @@
 
   <ItemGroup>
     <None Include=".githup\workflows\test.yml" />
+    <None Include="wwwroot\pdfs\MODULE_1.pdf" />
+    <None Include="wwwroot\pdfs\MODULE_2.pdf" />
+    <None Include="wwwroot\pdfs\MODULE_3.pdf" />
+    <None Include="wwwroot\pdfs\MODULE_4.pdf" />
+    <None Include="wwwroot\pdfs\MODULE_5.pdf" />
   </ItemGroup>
 
 </Project>
