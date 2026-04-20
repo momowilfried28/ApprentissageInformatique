@@ -1,7 +1,4 @@
-/* About Page */
-
 .about-page-header {
-    /* background: transparent;*/
     background-color: var(--card-background) transparent;
     padding: 60px 0;
     margin-bottom: 0px;
@@ -82,7 +79,6 @@
             color: var(--text-primary);
         }
 
-/* Responsive pour About */
 @media (max-width: 768px) {
     .about-page-header {
         padding: 40px 0;
