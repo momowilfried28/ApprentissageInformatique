@@ -49,10 +49,6 @@
     position: relative;
 }
 
-.hero:hover .banner-image {
-    transform: scale(1.05);
-}
-
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -84,13 +80,14 @@
 
 .hero h1 {
     font-size: 3.5rem;
-    font-weight: 500;
     margin-bottom: 24px;
     line-height: 1.2;
-    color: white;
+    color: yellowgreen;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     letter-spacing: -0.02em;
     animation: fadeInUp 0.8s ease-out;
+    font-family: "Sekuya", system-ui;
+    font-style: normal;
 }
 
 .hero .lead {
